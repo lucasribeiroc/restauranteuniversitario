@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt_BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Restaurante Universitário - HSM</title>
+    </head>
+    <body>
+        <script>	
+            var resposta = prompt("Gostaria de participar de uma pesquisa?");
+            var qtdeAlunosEntrevistados = 0;
+            var qtdeMenosDez = 0;
+            var qtdeDezQuinze = 0;
+            var qtdeMaisQuinze = 0;
+            do {
+                var qtdeVisitas = prompt("Quantas vezes você comeu no RU este mês?");
+                if (qtdeVisitas < 10) {
+                    qtdeMenosDez++;
+                } else if (qtdeVisitas >=10 && qtdeVisitas <= 15) {
+                    qtdeDezQuinze++;
+                } else if (qtdeVisitas > 15) {
+                    qtdeMaisQuinze++;
+                }
+                var resposta = prompt("Gostaria de participar de uma pesquisa?");
+                qtdeAlunosEntrevistados++;
+            }
+            while(resposta == "sim"){};
+
+            var totalVisitas = qtdeMenosDez + qtdeDezQuinze + qtdeMaisQuinze;
+            var percentualMenosDez = (qtdeMenosDez / qtdeAlunosEntrevistados) * 100;
+            var percentualDezQuinze = (qtdeDezQuinze / qtdeAlunosEntrevistados) * 100;
+            var percentualMaisQuinze = (qtdeMaisQuinze / qtdeAlunosEntrevistados) * 100;
+
+            document.write("O percentual de alunos que comem menos de 10 vezes por mês no RU é de: <strong>" +percentualMenosDez+ " </strong>%");
+            document.write("<br>");
+            document.write("<br>");
+            document.write("O percentual de alunos que comem de 10 a 15 vezes por mês no RU é de: <strong>" +percentualDezQuinze+ " </strong>%");
+            document.write("<br>");
+            document.write("<br>");
+            document.write("O percentual de alunos que comem mais de 15 vezes por mês no RU é de: <strong>" +percentualMaisQuinze+ " </strong>%");
+            document.write("<br>");
+            document.write("<br>");
+            document.write("O total de alunos que participaram na pesquisa é de: <strong>" +qtdeAlunosEntrevistados+ "</strong>");
+                
+        </script>
+    </body>
+</html>
